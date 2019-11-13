@@ -25,6 +25,16 @@
                name="email">
 
       </div>
+
+      <div class="form-group">
+        <label for="number">Phone Number</label>
+        <input type="text" [(ngModel)]="contact.number"
+               class="form-control"
+               id="number"
+               name="number">
+
+      </div>
+
       <button type="submit" [disabled]="!userForm.form.valid"
               class="btn btn-info">Submit</button>
     </form>

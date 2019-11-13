@@ -18,6 +18,9 @@ export class ContactServiceService {
     return this.http.get<Contact[]>(this.contactsUrl);
   }
   public save(contact: Contact) {
-    return this.http.post<Contact>(this.contactsUrl, contact);
+    return this.http.post<Contact>(this.contactsUrl + '/add', contact);
+  }
+  public getSingleContact(id: number): Observable<any> {
+    return this.http.get<Contact[]>(this.contactsUrl + '/' + id);
   }
 }

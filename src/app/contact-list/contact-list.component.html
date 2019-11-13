@@ -1,25 +1,7 @@
-<div class="card my-5">
+<div *ngFor="let contact of contacts; let i = index" (click)="onViewContact(i)">
+<div class="card">
   <div class="card-body">
-    <table class="table table-bordered table-striped">
-      <thead class="thead-dark">
-      <tr>
-        <th scope="col">#</th>
-        <th scope="col">Name</th>
-        <th scope="col">LastName</th>
-        <th scope="col">Email</th>
-        <th scope="col">Number</th>
-
-      </tr>
-      </thead>
-      <tbody>
-      <tr *ngFor="let contact of contacts">
-        <td>{{ contact.id }}</td>
-        <td>{{ contact.name }}</td>
-        <td>{{ contact.lastname }}</td>
-        <td><a href="mailto:{{ contact.email }}">{{ contact.email }}</a></td>
-        <td>{{ contact.number }}</td>
-      </tr>
-      </tbody>
-    </table>
+    {{contact.name}}
   </div>
+</div>
 </div>

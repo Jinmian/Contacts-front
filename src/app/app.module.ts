@@ -8,12 +8,14 @@ import { ContactFormComponent } from './contact-form/contact-form.component';
 import {HttpClientModule} from '@angular/common/http';
 import {FormsModule} from '@angular/forms';
 import {ContactServiceService} from './service/contact-service.service';
+import { SingleContactComponent } from './contact-list/single-contact/single-contact.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ContactListComponent,
-    ContactFormComponent
+    ContactFormComponent,
+    SingleContactComponent
   ],
   imports: [
     BrowserModule,
