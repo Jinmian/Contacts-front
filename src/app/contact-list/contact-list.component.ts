@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Contact} from '../contacts/contact';
 import {ContactServiceService} from '../service/contact-service.service';
-import {Router} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 
 @Component({
   selector: 'app-contact-list',
@@ -16,11 +16,22 @@ export class ContactListComponent implements OnInit {
               private router: Router) { }
 
   ngOnInit() {
-    this.contactService.findAll().subscribe(data =>{
+    this.getAllContact();
+  }
+  getAllContact() {
+    this.contactService.findAll().subscribe(data => {
       this.contacts = data;
     });
   }
-  onViewContact(index: number){
+  onViewContact(index: number) {
     this.router.navigate(['/contacts', this.contacts[index].id]);
+  }
+  deleteContact(index: number) {
+    this.contactService.deleteContact(this.contacts[index].id).subscribe(
+      data => {
+        console.log(data);
+      },
+      error => console.log(error));
+    this.contacts.splice(index, 1);
   }
 }

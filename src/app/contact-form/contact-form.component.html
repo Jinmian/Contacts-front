@@ -1,42 +1,42 @@
-<div class="card my-5">
-  <div class="card-body">
-    <form (ngSubmit)="onSubmit()" #userForm="ngForm">
-      <div class="form-group">
-        <label for="name">Name</label>
-        <input type="text" [(ngModel)]="contact.name"
-               class="form-control"
-               id="name"
-               name="name">
+<div class="container">
+  <div class="row">
+
+    <div class="card my-5">
+
+      <div class="card-body">
+        <img class="iconContact" src="assets/images/contact.jpg"/>
+        <form (ngSubmit)="onSubmit()" #userForm="ngForm">
+
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" [(ngModel)]="contact.name"
+                   class="form-control"
+                   id="name"
+                   name="name">
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="text" [(ngModel)]="contact.email"
+                   class="form-control"
+                   id="email"
+                   name="email">
+          </div>
+          <div class="form-group">
+            <label for="number">Phone Number</label>
+            <input type="text" [(ngModel)]="contact.number"
+                   class="form-control"
+                   id="number"
+                   name="number">
+          </div>
+          <div>
+          <button type="submit" [disabled]="!userForm.form.valid"
+                  class="btn btn-info" id="btnOK">Ok
+          </button>
+            <button type="button" class="btn btn-info" id="btnNO" (click)="back()">Cancel
+            </button>
+          </div>
+        </form>
       </div>
-
-      <div class="form-group">
-        <label for="lastname">Lastname</label>
-        <input type="text" [(ngModel)]="contact.lastname"
-               class="form-control"
-               id="lastname"
-               name="lastname">
-      </div>
-
-      <div class="form-group">
-        <label for="email">Email</label>
-        <input type="text" [(ngModel)]="contact.email"
-               class="form-control"
-               id="email"
-               name="email">
-
-      </div>
-
-      <div class="form-group">
-        <label for="number">Phone Number</label>
-        <input type="text" [(ngModel)]="contact.number"
-               class="form-control"
-               id="number"
-               name="number">
-
-      </div>
-
-      <button type="submit" [disabled]="!userForm.form.valid"
-              class="btn btn-info">Submit</button>
-    </form>
+    </div>
   </div>
 </div>

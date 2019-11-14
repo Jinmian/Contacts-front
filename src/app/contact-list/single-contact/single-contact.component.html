@@ -1,12 +1,18 @@
-<div class="row">
-  <div class="col-xs-12">
-    <div class="list-group">
-      <h3 class="list-group-item-heading">
-        {{ contact.name }}
-      </h3>
-      <p class="list-group-item-text">{{ contact.lastname }}</p>
-      <p class="list-group-item-text">{{ contact.email }}</p>
-      <p class="list-group-item-text">{{ contact.number }}</p>
+<div class="container">
+  <div class="row">
+    <div>
+      <button type="button" class="btn btn" id="btn" (click)="back()"> < Contacts </button>
+      <button type="button" class="btn btn"(click)="back()"> Modifier > </button>
+    <div class="col">
+      <img class="iconContact" src="assets/images/contact.jpg"/>
+      <div class="card align-items-center">
+        <h4 class="card-title">
+          {{ contact.name }}
+        </h4>
+        <p class="list-group-item-text"><img src="assets/images/mail.png"/> {{ contact.email }}</p>
+        <p class="list-group-item-text"><img src="assets/images/phone.png"/> {{ contact.number }}</p>
+      </div>
     </div>
   </div>
+</div>
 </div>

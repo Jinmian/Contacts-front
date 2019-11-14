@@ -1,0 +1,12 @@
+.row{
+  justify-content: center;
+}
+.iconContact {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+#btnOK{
+  float : right;
+}

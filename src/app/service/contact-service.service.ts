@@ -8,19 +8,26 @@ import {Contact} from '../contacts/contact';
 })
 export class ContactServiceService {
 
-  private contactsUrl: string;
+  contactsUrl: string;
+  contacts: Contact[];
 
   constructor(private http: HttpClient) {
     this.contactsUrl = 'http://localhost:8080/contacts';
   }
 
-  public findAll(): Observable<Contact[]>{
+  findAll(): Observable<Contact[]>{
     return this.http.get<Contact[]>(this.contactsUrl);
   }
-  public save(contact: Contact) {
+  create(contact: Contact) {
     return this.http.post<Contact>(this.contactsUrl + '/add', contact);
   }
-  public getSingleContact(id: number): Observable<any> {
+  getSingleContact(id: number): Observable<any> {
     return this.http.get<Contact[]>(this.contactsUrl + '/' + id);
+  }
+  deleteContact(id: number): Observable<any> {
+    return this.http.delete<Contact[]>(this.contactsUrl + '/' + id);
+  }
+  updateContact(id: number, value: any): Observable<any> {
+    return this.http.put<Contact[]>(this.contactsUrl + '/' + id, value);
   }
 }

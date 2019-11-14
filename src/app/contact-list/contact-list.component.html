@@ -1,7 +1,25 @@
-<div *ngFor="let contact of contacts; let i = index" (click)="onViewContact(i)">
-<div class="card">
-  <div class="card-body">
-    {{contact.name}}
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <a routerLink="/contacts/add" class="btn btn-info" id="add">+</a>
+      <div class="card-header">
+        <h4>Contacts</h4>
+        <form class="form-inline md-form form-sm">
+          <input class="form-control form-control-sm mr-3 w-75" type="text" placeholder="Search"
+                 aria-label="Search">
+          <i class="fas fa-search" aria-hidden="true"></i>
+        </form>
+      </div>
+      <div *ngFor="let contact of contacts; let i = index">
+        <div class="card" (click)="onViewContact(i)">
+          <div class="card-body">
+            {{contact.name}}
+          </div>
+        </div>
+        <button type="button" ngbAutofocus class="btn btn-danger" (click)="deleteContact(i)">
+          <span class="glyphicon glyphicon-minus"></span>
+        </button>
+      </div>
+    </div>
   </div>
-</div>
 </div>

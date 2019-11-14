@@ -1,3 +1,9 @@
 .card{
   margin-bottom: 2px;
 }
+#add{
+  float: right;
+}
+.row{
+  justify-content: center;
+}

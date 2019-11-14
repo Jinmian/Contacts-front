@@ -16,10 +16,12 @@ export class ContactFormComponent{
   }
 
   onSubmit(){
-    this.contactService.save(this.contact).subscribe(result => this.gotoContactList());
+    this.contactService.create(this.contact).subscribe(result => this.gotoContactList());
   }
   gotoContactList(){
     this.router.navigate(['/contacts']);
   }
-
+  back() {
+    this.router.navigate(['/contacts']);
+  }
 }

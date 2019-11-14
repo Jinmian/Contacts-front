@@ -13,7 +13,7 @@ export class SingleContactComponent implements OnInit {
   contact: Contact;
   constructor(private route: ActivatedRoute,
               private contactService: ContactServiceService,
-             ) { }
+              private router: Router) { }
 
   ngOnInit() {
     this.getContact();
@@ -26,4 +26,7 @@ export class SingleContactComponent implements OnInit {
     this.contact = res);
   }
 
+  back() {
+    this.router.navigate(['/contacts']);
+  }
 }
