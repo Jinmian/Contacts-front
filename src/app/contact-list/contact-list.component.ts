@@ -29,7 +29,7 @@ export class ContactListComponent implements OnInit {
   deleteContact(index: number) {
     this.contactService.deleteContact(this.contacts[index].id).subscribe(
       data => {
-        console.log(data);
+        console.log('Deleted');
       },
       error => console.log(error));
     this.contacts.splice(index, 1);

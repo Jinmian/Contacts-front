@@ -29,4 +29,7 @@ export class SingleContactComponent implements OnInit {
   back() {
     this.router.navigate(['/contacts']);
   }
+  goToEdit() {
+    this.router.navigate(['/contacts/edit/' + this.contact.id]);
+  }
 }
