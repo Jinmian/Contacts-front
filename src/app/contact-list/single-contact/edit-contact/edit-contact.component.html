@@ -16,10 +16,13 @@
 
         <div class="form-group">
           <label for="number">Number</label>
-          <input type="text" class="form-control" id="number" required [(ngModel)]="contact.number" name="number">
+          <input (keypress)="contactService.numberOnly($event)" type="text" class="form-control" id="number" required [(ngModel)]="contact.number" name="number">
         </div>
 
         <button type="submit" class="btn btn-success">Update</button>
+        <button type="button" class="btn btn-danger" (click)="deleteContact()">
+          Delete
+        </button>
       </form>
     </div>
   </div>

@@ -30,6 +30,12 @@ export class EditContactComponent implements OnInit {
     this.contact = new Contact();
     this.goToList();
   }
+  deleteContact() {
+    this.contactService.deleteContact(this.id).subscribe(data => console.log(data),
+      error => console.log(error));
+    this.contact = new Contact();
+    this.goToList();
+  }
   goToList() {
     this.router.navigate(['/contacts']);
   }

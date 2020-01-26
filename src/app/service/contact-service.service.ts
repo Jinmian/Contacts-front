@@ -30,4 +30,11 @@ export class ContactServiceService {
   updateContact(id: number, value: any): Observable<any> {
     return this.http.put<Contact[]>(this.contactsUrl + '/' + id, value);
   }
+  numberOnly(event): boolean {
+    const charCode = (event.which) ? event.which : event.keypress;
+    if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+      return false;
+    }
+    return true;
+  }
 }

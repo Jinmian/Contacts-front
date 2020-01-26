@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Contact} from '../contacts/contact';
 import {ContactServiceService} from '../service/contact-service.service';
-import {ActivatedRoute, Router} from '@angular/router';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-contact-list',
@@ -20,18 +20,10 @@ export class ContactListComponent implements OnInit {
   }
   getAllContact() {
     this.contactService.findAll().subscribe(data => {
-      this.contacts = data;
+      this.contacts = data.sort((a, b) => a.name.localeCompare(b.name));
     });
   }
   onViewContact(index: number) {
     this.router.navigate(['/contacts', this.contacts[index].id]);
-  }
-  deleteContact(index: number) {
-    this.contactService.deleteContact(this.contacts[index].id).subscribe(
-      data => {
-        console.log('Deleted');
-      },
-      error => console.log(error));
-    this.contacts.splice(index, 1);
   }
 }

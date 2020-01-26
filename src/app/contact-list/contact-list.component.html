@@ -5,9 +5,7 @@
       <div class="card-header">
         <h4>Contacts</h4>
         <form class="form-inline md-form form-sm">
-          <input class="form-control form-control-sm mr-3 w-75" type="text" placeholder="Search"
-                 aria-label="Search">
-          <i class="fas fa-search" aria-hidden="true"></i>
+          <input class="form-control form-control-sm mr-3 w-75" type="text" placeholder="Search">
         </form>
       </div>
       <div *ngFor="let contact of contacts; let i = index">
@@ -16,9 +14,6 @@
             {{contact.name}}
           </div>
         </div>
-        <button type="button" ngbAutofocus class="btn btn-danger" (click)="deleteContact(i)">
-          <span class="glyphicon glyphicon-minus"></span>
-        </button>
       </div>
     </div>
   </div>

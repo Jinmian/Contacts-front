@@ -23,7 +23,7 @@
           </div>
           <div class="form-group">
             <label for="number">Phone Number</label>
-            <input type="text" [(ngModel)]="contact.number"
+            <input (keypress)="contactService.numberOnly($event)" type="text" [(ngModel)]="contact.number"
                    class="form-control"
                    id="number"
                    name="number">
